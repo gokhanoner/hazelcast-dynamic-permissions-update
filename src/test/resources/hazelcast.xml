@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+           http://www.hazelcast.com/schema/config/hazelcast-config-3.11.xsd">
+
+    <properties>
+        <property name="hazelcast.phone.home.enabled">false</property>
+        <property name="hazelcast.enterprise.license.key">YOUR_LICENSE_KEY</property>
+    </properties>
+
+    <group>
+        <name>dev-1</name>
+    </group>
+
+    <network>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <interface>127.0.0.1</interface>
+                <members>127.0.0.1</members>
+            </tcp-ip>
+        </join>
+    </network>
+    <security enabled="true">
+        <client-permissions>
+            <map-permission name="map-1">
+                <endpoints>
+                    <endpoint>127.0.0.1</endpoint>
+                </endpoints>
+                <actions>
+                    <action>create</action>
+                    <action>put</action>
+                    <action>read</action>
+                    <action>remove</action>
+                </actions>
+            </map-permission>
+        </client-permissions>
+    </security>
+</hazelcast>
