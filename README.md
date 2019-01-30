@@ -7,11 +7,12 @@ Hazelcast IMDG cluster. (See https://docs.hazelcast.org/docs/latest/manual/html-
 
 ## Build
 
- - `mvn clean package -DskipTests`
+ - `mvn clean package -DskipTests`, package the application without running tests
 
  - If you want to run the tests & verify, open [hazelcast.xml](src/test/resources/hazelcast.xml)
  and [hazelcast-updated.xml](src/test/resources/hazelcast-updates.xml) files
- and replace `YOUR_LICENSE_KEY` text with a valid Hazelcast Enterprise license key.
+ and replace `YOUR_LICENSE_KEY` text with a valid Hazelcast Enterprise license key
+ and run ``mvn clean package`.
 
 ## Usage
 
